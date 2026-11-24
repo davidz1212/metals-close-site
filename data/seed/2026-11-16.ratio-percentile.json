@@ -1,0 +1,60 @@
+{
+  "source": "Yahoo Finance GC=F / SI=F 日收盘价比值（COMEX 期货口径，与本期快照一致）",
+  "retrieved_at": "2026-11-22T14:15:33+08:00",
+  "as_of": "2026-11-16",
+  "current": 82.36,
+  "total_observations": 2510,
+  "caliber": "COMEX 连续期货日收盘价比值；与 P0 样例的 TVC 现货口径不可互换",
+  "definition": {
+    "metric": "百分位排名（Percentile Rank, PR）",
+    "formula": "PR = (样本中低于当前值的个数 + 0.5 × 并列个数) ÷ 样本数 × 100",
+    "not_percentile_value": "PR 52.7 是相对位置，不是该比值数值本身",
+    "quartiles": "Q1 = 第 25 百分位数，中位数 = Q2，Q3 = 第 75 百分位数；色带仅表示分位刻度"
+  },
+  "windows": {
+    "1y": {
+      "percentile": 99.6,
+      "samples": 251,
+      "min": 44.16,
+      "median": 66.03,
+      "max": 82.36,
+      "start": "2025-11-16",
+      "end": "2026-11-16",
+      "p25": 61.27,
+      "p75": 69.41
+    },
+    "3y": {
+      "percentile": 41.9,
+      "samples": 754,
+      "min": 44.16,
+      "median": 84.55,
+      "max": 105.41,
+      "start": "2023-11-16",
+      "end": "2026-11-16",
+      "p25": 69.44,
+      "p75": 88.65
+    },
+    "5y": {
+      "percentile": 42.8,
+      "samples": 1257,
+      "min": 44.16,
+      "median": 83.92,
+      "max": 105.41,
+      "start": "2021-11-16",
+      "end": "2026-11-16",
+      "p25": 78.02,
+      "p75": 87.72
+    },
+    "10y": {
+      "percentile": 52.7,
+      "samples": 2510,
+      "min": 44.16,
+      "median": 81.25,
+      "max": 125.89,
+      "start": "2016-11-16",
+      "end": "2026-11-16",
+      "p25": 75.34,
+      "p75": 86.57
+    }
+  }
+}

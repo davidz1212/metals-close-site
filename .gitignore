@@ -1,0 +1,20 @@
+# 环境与密钥（严禁提交）
+.env
+**/.env
+data/.dev_secret
+data/.subscriber_seeded
+
+# 数据库与运行日志
+*.db
+*.db-*
+data/auto_update.log
+data/cache/*.csv
+data/cme/*.pdf
+
+# Python 与临时调试产物
+__pycache__/
+*.pyc
+tools/_cache/
+tools/_tmp/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,57 @@
+{
+  "source": "Yahoo Finance chart API (GC=F / SI=F daily close)",
+  "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GC=F?range=10y&interval=1d",
+  "retrieved_at": "2026-11-15T14:16:21+08:00",
+  "caliber": "COMEX 连续期货日收盘价比值；与卡片中的 TradingView TVC 现货金银比口径不同",
+  "as_of": "2026-11-13",
+  "current": 79.12,
+  "total_observations": 2514,
+  "definition": {
+    "metric": "百分位排名 Percentile Rank (PR)",
+    "formula": "PR = (低于当前值的交易日数 + 0.5 × 等于当前值的交易日数) ÷ 样本数 × 100",
+    "not_percentile_value": "P 值是相对位置（有多少比例的历史观测低于当前值），不是「第 P 百分位数」这个比值数值",
+    "quartiles": "Q1 下四分位数（第 25 百分位数）· Q2 中位数 · Q3 上四分位数（第 75 百分位数）"
+  },
+  "windows": {
+    "1y": {
+      "percentile": 95.8,
+      "samples": 252,
+      "min": 44.16,
+      "p25": 61.22,
+      "median": 66.21,
+      "p75": 69.46,
+      "max": 81.8,
+      "start": "2025-11-13"
+    },
+    "3y": {
+      "percentile": 35.3,
+      "samples": 755,
+      "min": 44.16,
+      "p25": 69.43,
+      "median": 84.55,
+      "p75": 88.65,
+      "max": 105.41,
+      "start": "2023-11-14"
+    },
+    "5y": {
+      "percentile": 29.6,
+      "samples": 1257,
+      "min": 44.16,
+      "p25": 77.95,
+      "median": 83.92,
+      "p75": 87.72,
+      "max": 105.41,
+      "start": "2021-11-15"
+    },
+    "10y": {
+      "percentile": 41.1,
+      "samples": 2514,
+      "min": 44.16,
+      "p25": 75.29,
+      "median": 81.19,
+      "p75": 86.57,
+      "max": 125.89,
+      "start": "2016-11-15"
+    }
+  }
+}

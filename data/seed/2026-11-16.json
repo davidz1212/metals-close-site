@@ -1,0 +1,426 @@
+{
+  "report_date": "2026-11-16",
+  "weekday": "MONDAY",
+  "mode": "REAL",
+  "lang": "zh-CN",
+  "note": "真实采集快照：主行情与矿股/汇率取 Yahoo Finance（GC=F / SI=F / GDX / SIL / CNY=X / INR=X）；上海基准价与白银指定仓库库存取上海黄金交易所（SGE）官网；印度基准价取 IBJA 官网 PM 午盘价（不含 GST）；上期所白银仓单取 SHFE 官网；COMEX 注册/合格仓单与上海白银溢价周均值取 MetalCharts.org 免费周度 CSV（页面已署名）；COMEX 白银总持仓取 CFTC 官方公开 API；LBMA 伦敦金库库存取月度曲线。CME 交割通知因官网访问限制标 unavailable，未填占位数字。",
+  "generated_at": "2026-11-22T14:15:33+08:00",
+  "color_scheme": "west",
+  "provenance": {
+    "YF-FUT": "Yahoo Finance COMEX continuous futures daily close (GC=F / SI=F)",
+    "Yahoo Equity/FX": "Yahoo Finance GDX / SIL / CNY=X / INR=X daily close",
+    "SGE": "Shanghai Gold Exchange (sge.com.cn) daily Au99.99 & Ag(T+D) close and weekly silver vault PDF",
+    "IBJA": "India Bullion and Jewellers Association (ibjarates.com) PM 999 gold & silver rates ex-GST",
+    "SHFE": "Shanghai Futures Exchange (shfe.com.cn) silver warrant daily/weekly report",
+    "CFTC": "CFTC Disaggregated COT Open Data API (publicreporting.cftc.gov)",
+    "LBMA": "LBMA London Vault Holdings monthly",
+    "MetalCharts": "MetalCharts.org free weekly CSV — COMEX registered/eligible stocks & Shanghai silver premium; reuse with visible credit link",
+    "DERIVED": "computed by calculation engine"
+  },
+  "fields": {
+    "meta.headline": {
+      "display": "",
+      "unit": "text",
+      "source": "DERIVED / app.js 规则引擎",
+      "quality": "rule-generated"
+    },
+    "gold.tvc_close": {
+      "value": 3853.0,
+      "display": "$3,853.000",
+      "unit": "USD/oz",
+      "source": "Yahoo Finance GC=F（COMEX 连续期货日收盘）",
+      "as_of": "2026-11-16 close",
+      "quality": "real"
+    },
+    "gold.change_abs": {
+      "display": "$33.300",
+      "unit": "USD/oz",
+      "source": "Yahoo Finance GC=F（COMEX 连续期货日收盘）",
+      "direction": "down",
+      "quality": "real-derived"
+    },
+    "gold.day": {
+      "display": "-0.86%",
+      "unit": "%",
+      "source": "Yahoo Finance GC=F（COMEX 连续期货日收盘）",
+      "direction": "down",
+      "quality": "real-derived"
+    },
+    "gold.week": {
+      "display": "-6.36%",
+      "unit": "%",
+      "source": "Yahoo Finance GC=F（COMEX 连续期货日收盘）",
+      "direction": "down",
+      "quality": "real-derived"
+    },
+    "gold.month": {
+      "display": "-7.85%",
+      "unit": "%",
+      "source": "Yahoo Finance GC=F（COMEX 连续期货日收盘）",
+      "direction": "down",
+      "quality": "real-derived"
+    },
+    "gold.range_low": {
+      "value": 3835.2,
+      "display": "$3,835.20",
+      "unit": "USD/oz",
+      "source": "Yahoo Finance GC=F（COMEX 连续期货日收盘）",
+      "quality": "real"
+    },
+    "gold.range_high": {
+      "value": 3904.3,
+      "display": "$3,904.30",
+      "unit": "USD/oz",
+      "source": "Yahoo Finance GC=F（COMEX 连续期货日收盘）",
+      "quality": "real"
+    },
+    "gold.prior_close": {
+      "value": 3886.3,
+      "display": "$3,886.300",
+      "unit": "USD/oz",
+      "source": "Yahoo Finance GC=F（COMEX 连续期货日收盘）",
+      "quality": "real"
+    },
+    "silver.tvc_close": {
+      "value": 46.785,
+      "display": "$46.7850",
+      "unit": "USD/oz",
+      "source": "Yahoo Finance SI=F（COMEX 连续期货日收盘）",
+      "as_of": "2026-11-16 close",
+      "quality": "real"
+    },
+    "silver.change_abs": {
+      "display": "$2.2460",
+      "unit": "USD/oz",
+      "source": "Yahoo Finance SI=F（COMEX 连续期货日收盘）",
+      "direction": "down",
+      "quality": "real-derived"
+    },
+    "silver.day": {
+      "display": "-4.58%",
+      "unit": "%",
+      "source": "Yahoo Finance SI=F（COMEX 连续期货日收盘）",
+      "direction": "down",
+      "quality": "real-derived"
+    },
+    "silver.week": {
+      "display": "-10.99%",
+      "unit": "%",
+      "source": "Yahoo Finance SI=F（COMEX 连续期货日收盘）",
+      "direction": "down",
+      "quality": "real-derived"
+    },
+    "silver.month": {
+      "display": "-17.91%",
+      "unit": "%",
+      "source": "Yahoo Finance SI=F（COMEX 连续期货日收盘）",
+      "direction": "down",
+      "quality": "real-derived"
+    },
+    "silver.range_low": {
+      "value": 46.465,
+      "display": "$46.465",
+      "unit": "USD/oz",
+      "source": "Yahoo Finance SI=F（COMEX 连续期货日收盘）",
+      "quality": "real"
+    },
+    "silver.range_high": {
+      "value": 47.83,
+      "display": "$47.830",
+      "unit": "USD/oz",
+      "source": "Yahoo Finance SI=F（COMEX 连续期货日收盘）",
+      "quality": "real"
+    },
+    "silver.prior_close": {
+      "value": 49.031,
+      "display": "$49.0310",
+      "unit": "USD/oz",
+      "source": "Yahoo Finance SI=F（COMEX 连续期货日收盘）",
+      "quality": "real"
+    },
+    "ratio.value": {
+      "value": 82.36,
+      "display": "82.36",
+      "unit": "oz Ag / oz Au",
+      "source": "DERIVED",
+      "formula": "gold.tvc_close / silver.tvc_close",
+      "quality": "real-derived"
+    },
+    "ratio.day": {
+      "display": "+3.90% 当日",
+      "unit": "%",
+      "source": "DERIVED",
+      "formula": "(1+gold.day)/(1+silver.day)-1",
+      "direction": "up",
+      "quality": "real-derived"
+    },
+    "ratio.month_ago": {
+      "display": "73.36",
+      "unit": "ratio",
+      "source": "DERIVED",
+      "as_of": "2026-10-16",
+      "quality": "real-derived"
+    },
+    "ratio.year_ago": {
+      "display": "80.93",
+      "unit": "ratio",
+      "source": "DERIVED",
+      "as_of": "2025-11-14",
+      "quality": "real-derived"
+    },
+    "bench.silver_india": {
+      "display": "暂缺（IBJA 仅保留近期）",
+      "unit": "USD/oz",
+      "source": "公开源暂缺",
+      "quality": "unavailable"
+    },
+    "bench.silver_india_premium": {
+      "display": "—",
+      "unit": "%",
+      "source": "公开源暂缺",
+      "quality": "unavailable"
+    },
+    "bench.silver_shanghai": {
+      "value": 52.38,
+      "display": "$52.38",
+      "unit": "USD/oz",
+      "source": "上海黄金交易所 Ag(T+D) 收盘价 + Yahoo CNY=X",
+      "as_of": "2026-11-16",
+      "quality": "real"
+    },
+    "bench.silver_shanghai_premium": {
+      "display": "+11.97%",
+      "unit": "%",
+      "source": "上海黄金交易所 Ag(T+D) 收盘价 + Yahoo CNY=X",
+      "as_of": "2026-11-16",
+      "direction": "up",
+      "quality": "real-derived"
+    },
+    "bench.gold_india": {
+      "display": "暂缺（IBJA 仅保留近期）",
+      "unit": "USD/oz",
+      "source": "公开源暂缺",
+      "quality": "unavailable"
+    },
+    "bench.gold_india_premium": {
+      "display": "—",
+      "unit": "%",
+      "source": "公开源暂缺",
+      "quality": "unavailable"
+    },
+    "bench.gold_shanghai": {
+      "value": 3867.49,
+      "display": "$3,867.49",
+      "unit": "USD/oz",
+      "source": "上海黄金交易所 Au99.99 收盘价 + Yahoo CNY=X",
+      "as_of": "2026-11-16",
+      "quality": "real"
+    },
+    "bench.gold_shanghai_premium": {
+      "display": "+0.38%",
+      "unit": "%",
+      "source": "上海黄金交易所 Au99.99 收盘价 + Yahoo CNY=X",
+      "as_of": "2026-11-16",
+      "direction": "up",
+      "quality": "real-derived"
+    },
+    "vault.comex_registered": {
+      "value": 101.72,
+      "display": "101.72",
+      "unit": "Moz",
+      "source": "CME 每日仓单报告 / MetalCharts.org（周度 CSV）",
+      "as_of": "2026-11-13",
+      "quality": "real"
+    },
+    "vault.comex_registered_chg": {
+      "display": "+0.78",
+      "unit": "Moz",
+      "source": "CME 每日仓单报告 / MetalCharts.org（周度 CSV）",
+      "as_of": "2026-11-06 → 2026-11-13",
+      "direction": "up",
+      "quality": "real-derived"
+    },
+    "vault.comex_registered_d30": {
+      "display": "-1.40",
+      "unit": "Moz",
+      "source": "CME 每日仓单报告 / MetalCharts.org（周度 CSV）",
+      "as_of": "2026-10-16 → 2026-11-13",
+      "direction": "down",
+      "quality": "real-derived"
+    },
+    "vault.comex_eligible": {
+      "value": 231.08,
+      "display": "231.08",
+      "unit": "Moz",
+      "source": "CME 每日仓单报告 / MetalCharts.org（周度 CSV）",
+      "as_of": "2026-11-13",
+      "quality": "real"
+    },
+    "vault.comex_eligible_chg": {
+      "display": "-2.51",
+      "unit": "Moz",
+      "source": "CME 每日仓单报告 / MetalCharts.org（周度 CSV）",
+      "as_of": "2026-11-06 → 2026-11-13",
+      "direction": "down",
+      "quality": "real-derived"
+    },
+    "vault.comex_eligible_d30": {
+      "display": "+0.44",
+      "unit": "Moz",
+      "source": "CME 每日仓单报告 / MetalCharts.org（周度 CSV）",
+      "as_of": "2026-10-16 → 2026-11-13",
+      "direction": "up",
+      "quality": "real-derived"
+    },
+    "vault.shfe": {
+      "value": 42.52,
+      "display": "42.52",
+      "unit": "Moz",
+      "source": "上海期货交易所（SHFE）官网白银仓单",
+      "as_of": "2026-11-16",
+      "quality": "real"
+    },
+    "vault.shfe_chg": {
+      "display": "-0.46d",
+      "unit": "Moz",
+      "source": "上海期货交易所（SHFE）官网白银仓单",
+      "as_of": "2026-11-16",
+      "direction": "down",
+      "quality": "real-derived"
+    },
+    "vault.sge": {
+      "value": 26.59,
+      "display": "26.59",
+      "unit": "Moz",
+      "source": "上海黄金交易所（SGE）指定仓库库存周报",
+      "as_of": "2026-11-16",
+      "quality": "real"
+    },
+    "vault.lbma": {
+      "value": 928.81,
+      "display": "928.81",
+      "unit": "Moz",
+      "source": "LBMA London Vault Holdings（月度）",
+      "as_of": "2026-10",
+      "quality": "real"
+    },
+    "vault.lbma_d30": {
+      "display": "-3.09m",
+      "unit": "Moz",
+      "source": "LBMA London Vault Holdings（月度）",
+      "as_of": "2026-09 → 2026-10",
+      "direction": "down",
+      "quality": "real-derived"
+    },
+    "comex.oi_to_registered": {
+      "value": 5.7,
+      "display": "5.7x",
+      "unit": "x",
+      "source": "CFTC COT 公开数据 API（周二持仓快照） / CME 每日仓单报告 / MetalCharts.org（周度 CSV）",
+      "as_of": "2026-11-10",
+      "formula": "CFTC Open_Interest_All (Moz) / COMEX Registered (Moz)",
+      "quality": "real-derived"
+    },
+    "comex.registered_to_oi": {
+      "value": 17.6,
+      "display": "17.6%",
+      "unit": "%",
+      "source": "CFTC COT 公开数据 API（周二持仓快照） / CME 每日仓单报告 / MetalCharts.org（周度 CSV）",
+      "as_of": "2026-11-10",
+      "formula": "COMEX Registered (Moz) / CFTC Open_Interest_All (Moz)",
+      "quality": "real-derived"
+    },
+    "comex.notices_total": {
+      "display": "暂缺（CME 反爬限制）",
+      "unit": "Moz",
+      "source": "CME 官网启用访问限制，未绕过",
+      "quality": "unavailable"
+    },
+    "comex.latest_report": {
+      "display": "暂缺",
+      "unit": "oz",
+      "source": "CME 官网启用访问限制，未绕过",
+      "quality": "unavailable"
+    },
+    "miners.gdx": {
+      "value": 78.95,
+      "display": "$78.95",
+      "unit": "USD",
+      "source": "Yahoo Finance GDX",
+      "quality": "real"
+    },
+    "miners.gdx_day": {
+      "display": "-3.29%",
+      "unit": "%",
+      "source": "Yahoo Finance GDX",
+      "direction": "down",
+      "quality": "real-derived"
+    },
+    "miners.gold_day": {
+      "display": "黄金 -0.86%",
+      "unit": "%",
+      "direction": "down",
+      "quality": "real-derived"
+    },
+    "miners.gdx_ratio_1y": {
+      "display": "+10.15%",
+      "unit": "%",
+      "direction": "up",
+      "quality": "real-derived"
+    },
+    "miners.sil": {
+      "value": 70.48,
+      "display": "$70.48",
+      "unit": "USD",
+      "source": "Yahoo Finance SIL",
+      "quality": "real"
+    },
+    "miners.sil_day": {
+      "display": "-4.45%",
+      "unit": "%",
+      "source": "Yahoo Finance SIL",
+      "direction": "down",
+      "quality": "real-derived"
+    },
+    "miners.silver_day": {
+      "display": "白银 -4.58%",
+      "unit": "%",
+      "direction": "down",
+      "quality": "real-derived"
+    },
+    "miners.sil_ratio_1y": {
+      "display": "+11.58%",
+      "unit": "%",
+      "direction": "up",
+      "quality": "real-derived"
+    },
+    "quality.premium_avg_30d": {
+      "value": 11.41,
+      "display": "上海本地收盘（2026-11-16）：白银 +11.97%、黄金 +0.38%；印度 IBJA 仅公布近期交易日，历史日暂缺；上海白银近 4 周均值 +11.41%（MetalCharts.org）。",
+      "source": "SGE / IBJA / MetalCharts.org",
+      "quality": "real-derived"
+    },
+    "quality.stress_score": {
+      "value": 5.69,
+      "display": "CFTC 总持仓 578.26 Moz（2026-11-10）÷ COMEX 注册库存 101.72 Moz（2026-11-13）= 5.7x。CME 交割通知 PDF 官网启用反爬拦截，暂缺。",
+      "source": "CFTC COT / MetalCharts.org",
+      "quality": "real-derived"
+    }
+  },
+  "headline_rule": {
+    "engine": "web/app.js headlineFor()",
+    "inputs": [
+      "gold.tvc_close",
+      "silver.tvc_close",
+      "gold.day",
+      "silver.day"
+    ],
+    "order": "按当日涨跌绝对值降序，波动大的品种置于句首",
+    "note": "数字由代码读取计算，不交给大模型"
+  },
+  "removed_sections": [
+    "后续日程",
+    "实物银鹰币",
+    "右上角徽章"
+  ]
+}

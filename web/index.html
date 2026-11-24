@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metals Close · 金银数据采集与可视化图表</title>
+<link rel="stylesheet" href="/static/styles.css?v=20261124a">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brandmark">
+      <span class="brandbar"></span>
+      <span><span data-i18n="brand">METALS CLOSE</span><small data-i18n="brand_sub">金银数据采集 · 可视化图表</small></span>
+    </div>
+    <div class="header-spacer"></div>
+    <a class="nav-btn" href="#pricing" data-i18n="nav_price">订阅方案</a>
+    <button class="nav-btn primary" id="nav-login" type="button" data-i18n="nav_login">订阅邮箱登录</button>
+    <button class="nav-btn" id="nav-logout" type="button" data-i18n="nav_logout" hidden>退出登录</button>
+    <button class="nav-btn lang-btn" id="nav-lang" type="button" data-i18n="nav_lang">EN</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="query-card">
+    <div>
+      <h2 data-i18n="query_title">数据查询</h2>
+      <p data-i18n="query_hint">默认展示最近一个已收盘交易日；可选择日期回看历史归档</p>
+    </div>
+    <form class="query-form" id="query-form">
+      <label for="query-date" data-i18n="query_label">报告日期</label>
+      <input type="date" id="query-date">
+      <button type="submit" id="query-btn" data-i18n="query_btn">查询数据</button>
+      <button type="button" class="ghost" id="query-latest" data-i18n="query_latest">最近收盘日</button>
+    </form>
+    <div class="query-status" id="query-status">—</div>
+  </section>
+
+  <section id="publicArea">
+    <div class="hero">
+      <div>
+        <div class="kicker" data-i18n="hero_kicker">公开数据采集 · 可视化图表工具</div>
+        <h1 data-i18n="hero_title">把公开金银数据，变成可回溯的可视化图表</h1>
+        <p data-i18n="hero_desc">自动采集公开渠道的黄金、白银历史价格、金银比历史分位、公开库存与持仓统计数据，提供交互式可视化折线图与按日期归档检索，仅供数据整理与技术学习参考。</p>
+      </div>
+      <div class="features">
+        <div class="feature"><b data-i18n="f1_title">八大可视化模块</b><span data-i18n="f1_desc">公开价格、比值分位、参考价差、库存统计、持仓数据与三张交互折线图，一页查看。</span></div>
+        <div class="feature"><b data-i18n="f2_title">数字可追溯</b><span data-i18n="f2_desc">每个字段标注公开来源与数据时点；衍生指标给出计算公式，口径差异明确说明。</span></div>
+        <div class="feature"><b data-i18n="f3_title">按日期查历史</b><span data-i18n="f3_desc">选择任一归档日期，即可回看当日完整数据快照与交互图表。</span></div>
+      </div>
+    </div>
+
+    <div class="plan" id="pricing">
+      <div>
+        <div class="plan-tag" data-i18n="price_badge">年度订阅</div>
+        <div class="plan-price" id="plan-price">99 元/年（约 US$14）</div>
+        <div class="plan-note" data-i18n="price_note">登录无需密码，验证码发送至订阅邮箱。</div>
+      </div>
+      <button type="button" id="btn-subscribe" data-i18n="subscribe_btn">订阅并解锁</button>
+    </div>
+  </section>
+
+  <section class="lock-panel" id="lock-panel" hidden>
+    <h2 data-i18n="locked_title">历史数据仅对订阅用户开放</h2>
+    <p data-i18n="locked_desc">使用订阅邮箱接收验证码登录，即可查询每日归档数据。</p>
+    <button type="button" id="lock-login" data-i18n="locked_btn">验证码登录</button>
+  </section>
+
+  <div id="sheet-host"></div>
+</main>
+
+<footer class="site-footer" data-i18n="site_footer">Metals Close · 公开金银数据采集与可视化图表工具</footer>
+
+<div class="modal-backdrop" id="login-modal">
+  <div class="modal" role="dialog" aria-modal="true">
+    <h3 data-i18n="login_title">订阅邮箱登录</h3>
+    <p data-i18n="login_desc">仅已订阅邮箱可接收验证码并查询数据，无需设置密码。</p>
+    <div class="field"><label for="login-email" data-i18n="login_email">订阅邮箱</label><input type="email" id="login-email" autocomplete="email" placeholder="name@example.com"></div>
+    <button class="nav-btn primary" type="button" id="btn-send-code" data-i18n="login_send">发送验证码</button>
+    <div class="field" style="margin-top:16px"><label for="login-code" data-i18n="login_code">邮箱验证码</label><input type="text" id="login-code" inputmode="numeric" maxlength="8" autocomplete="one-time-code"></div>
+    <div class="dev-code" id="dev-code" hidden></div>
+    <div class="modal-msg" id="login-msg"></div>
+    <p style="font-size:10.5px;margin:10px 0 0" data-i18n="login_hint">验证码 10 分钟内有效；同一邮箱 60 秒内只能发送一次。</p>
+    <div class="modal-actions">
+      <button type="button" id="login-cancel" data-i18n="login_cancel">取消</button>
+      <button class="primary" type="button" id="btn-verify" data-i18n="login_submit">登录并查看数据</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="subscribe-modal">
+  <div class="modal" role="dialog" aria-modal="true">
+    <h3 data-i18n="subscribe_btn">订阅并解锁</h3>
+    <p id="subscribe-desc" data-i18n="price_note">登录无需密码，验证码发送至订阅邮箱。</p>
+    <div class="field"><label for="subscribe-email" data-i18n="login_email">订阅邮箱</label><input type="email" id="subscribe-email" autocomplete="email" placeholder="name@example.com"></div>
+    <div class="modal-msg" id="subscribe-msg"></div>
+    <div class="modal-actions">
+      <button type="button" id="subscribe-cancel" data-i18n="login_cancel">取消</button>
+      <button class="primary" type="button" id="btn-checkout" data-i18n="subscribe_btn">订阅并解锁</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-backdrop" id="share-modal">
+  <div class="modal share-modal" role="dialog" aria-modal="true">
+    <h3 data-i18n="share_modal_title">分享日报 · 竖版长图</h3>
+    <p data-i18n="share_modal_hint">已生成高清竖版日报长图，可直接下载保存或分享给好友（手机端也可长按图片转发/保存）。</p>
+    <div class="share-preview"><img id="share-img" alt="Daily report poster"></div>
+    <div class="modal-msg" id="share-msg"></div>
+    <div class="modal-actions">
+      <button type="button" id="share-close" data-i18n="share_close">关闭</button>
+      <button type="button" id="share-download" data-i18n="share_download">下载长图</button>
+      <button class="primary" type="button" id="share-native" data-i18n="share_native">分享出去</button>
+    </div>
+  </div>
+</div>
+
+<script src="/static/i18n.js?v=20261124a"></script>
+<script src="/static/share.js?v=20261124a"></script>
+<script src="/static/app.js?v=20261124a"></script>
+</body>
+</html>

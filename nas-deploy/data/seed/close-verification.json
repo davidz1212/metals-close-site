@@ -1,0 +1,75 @@
+{
+  "as_of": "2026-11-13",
+  "prior_trading_day": "2026-11-12",
+  "week_anchor": "2026-11-06",
+  "month_anchor": "2026-10-14",
+  "retrieved_at": "2026-11-15T14:14:43+08:00",
+  "independent_source": "Yahoo Finance chart API (GC=F / SI=F daily close)",
+  "page_source": "2026-11-13 参考图片转录（TVC 现货口径）",
+  "caliber": "TVC 现货连续收盘 vs COMEX 期货收盘/结算，时点不同不可直接等同",
+  "checks": {
+    "close_gold": {
+      "page": 3883.94,
+      "market": 3886.3,
+      "diff_pct": -0.061
+    },
+    "close_silver": {
+      "page": 48.697,
+      "market": 49.121,
+      "diff_pct": -0.863
+    },
+    "prior_gold": {
+      "page": 3876.46,
+      "market": 3885.3,
+      "diff_pct": -0.228
+    },
+    "prior_silver": {
+      "page": 50.0296,
+      "market": 49.972,
+      "diff_pct": 0.115
+    },
+    "ratio": {
+      "page": 79.76,
+      "market": 79.12,
+      "diff_pct": 0.813
+    }
+  },
+  "changes": {
+    "day_gold": {
+      "page": 0.19,
+      "market": 0.026,
+      "diff_pp": 0.16
+    },
+    "day_silver": {
+      "page": -2.66,
+      "market": -1.703,
+      "diff_pp": -0.96
+    },
+    "week_gold": {
+      "page": -4.57,
+      "market": -4.628,
+      "diff_pp": 0.06
+    },
+    "week_silver": {
+      "page": -6.1,
+      "market": -5.177,
+      "diff_pp": -0.92
+    },
+    "month_gold": {
+      "page": -6.87,
+      "market": -5.394,
+      "diff_pp": -1.48
+    },
+    "month_silver": {
+      "page": -19.17,
+      "market": -11.573,
+      "diff_pp": -7.6
+    }
+  },
+  "verdict": "价格水平高度吻合（最大偏离 0.86%），前收与各期涨跌方向一致，可交叉佐证页面数值确为 2026-11-13 的真实市场收盘水平。差异来自 TVC 现货连续收盘与 COMEX 期货结算两个不同口径，非数据错误。注意：1 个月涨跌幅受起算日与口径叠加影响偏离最大（白银 7.60pp），仅作方向参考、不作精度核验。页面数值系从参考图片转录的 P0 样例值，并非由行情接口实时采集生成；P1 接入采集层后才可称为自动生成的收盘价。",
+  "unavailable_sources": [
+    "FRED GOLDAMGBD228NLBM / SLVPRUSD（该 CSV 端点已返回 404）",
+    "Stooq xauusd（2026 年起脚本访问被 JS 验证拦截）",
+    "Yahoo XAUUSD=X / XAGUSD=X（无数据）"
+  ]
+}

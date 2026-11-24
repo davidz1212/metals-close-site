@@ -1,0 +1,27 @@
+{
+  "as_of": "2026-11-16",
+  "retrieved_at": "2026-11-22T14:15:33+08:00",
+  "source": "Yahoo Finance / SGE / IBJA / SHFE / CFTC / LBMA / MetalCharts.org",
+  "method": "本期为真实采集快照：各字段均来自公开免费官方或署名数据源，衍生指标由代码确定性计算",
+  "checks": {
+    "gold_close": {
+      "value": 3853.0,
+      "source": "Yahoo Finance GC=F（COMEX 连续期货日收盘）",
+      "quality": "real"
+    },
+    "silver_close": {
+      "value": 46.785,
+      "source": "Yahoo Finance SI=F（COMEX 连续期货日收盘）",
+      "quality": "real"
+    },
+    "gold_prior": {
+      "value": 3886.3,
+      "as_of": "2026-11-13"
+    },
+    "silver_prior": {
+      "value": 49.031,
+      "as_of": "2026-11-13"
+    }
+  },
+  "verdict": "2026-11-16 为真实交易日收盘数据：主行情与矿股取 Yahoo Finance；上海/印度本地基准价取 SGE 与 IBJA 官网；库存取 SHFE、SGE 周报、LBMA 月报及 MetalCharts.org 免费周度 CSV；COMEX 持仓比取 CFTC 官方 API。仅 CME 交割通知因官网访问限制标暂缺。"
+}

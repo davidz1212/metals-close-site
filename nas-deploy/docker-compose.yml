@@ -1,0 +1,24 @@
+services:
+  metals-close:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: metals-close-site:local
+    container_name: metals-close
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      # 宿主机 8790 -> 容器 8765；8790 避开了已占用的 8080/8777/8899。
+      # 若仍冲突，把左边改成 8791 / 8792，右边 8765 不要动。
+      - "8790:8765"
+    volumes:
+      # SQLite 数据库 + 种子数据持久化到 NAS 的 nas-deploy/data 目录
+      - ./data:/app/data
+    environment:
+      - TZ=Asia/Shanghai
+      # 内网测试：免登录/免订阅直接查看；后续上线订阅时改成 0 即可恢复登录与订阅墙
+      - MC_PUBLIC_ACCESS=1
+      # 容器内后台每日定时自动采集并入库（北京时间 07:30 与 17:30）
+      - MC_AUTO_UPDATE=1
+      - MC_AUTO_UPDATE_TIMES=07:30,17:30
